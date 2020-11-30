@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-project(test LANGUAGES CXX)
+project(agentQT LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -28,14 +28,14 @@ find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets REQUIRED)
 find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets REQUIRED)
 
 if(ANDROID)
-  add_library(test SHARED
+  add_library(agentQT SHARED
     main.cpp
     mainwindow.cpp
     mainwindow.h
     mainwindow.ui
   )
 else()
-  add_executable(test
+  add_executable(agentQT
     main.cpp
     mainwindow.cpp
     mainwindow.h
@@ -43,4 +43,4 @@ else()
   )
 endif()
 
-target_link_libraries(test PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(agentQT PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
